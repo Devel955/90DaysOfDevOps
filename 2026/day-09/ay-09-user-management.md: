@@ -1,0 +1,77 @@
+# Day 09 – Linux User & Group Management Challenge
+
+## Users & Groups Created
+
+### Users
+- tokyo
+- berlin
+- professor
+- nairobi
+
+### Groups
+- developers
+- admins
+- project-team
+
+---
+
+## Group Assignments
+
+| User      | Groups                   |
+|-----------|--------------------------|
+| tokyo     | developers, project-team |
+| berlin    | developers, admins       |
+| professor | admins                   |
+| nairobi   | project-team             |
+
+---
+
+## Directories Created
+
+| Directory           | Group         | Permission |
+|---------------------|---------------|------------|
+| /opt/dev-project    | developers    | 775        |
+| /opt/team-workspace | project-team  | 775        |
+
+---
+
+## Commands Used
+
+```bash
+# Users
+sudo useradd -m tokyo
+sudo useradd -m berlin
+sudo useradd -m professor
+sudo useradd -m nairobi
+
+sudo passwd tokyo
+sudo passwd berlin
+sudo passwd professor
+sudo passwd nairobi
+
+# Groups
+sudo groupadd developers
+sudo groupadd admins
+sudo groupadd project-team
+
+# Assign groups
+sudo usermod -aG developers tokyo
+sudo usermod -aG developers,admins berlin
+sudo usermod -aG admins professor
+sudo usermod -aG project-team nairobi
+sudo usermod -aG project-team tokyo
+
+# Directories
+sudo mkdir -p /opt/dev-project
+sudo mkdir -p /opt/team-workspace
+
+sudo chgrp developers /opt/dev-project
+sudo chgrp project-team /opt/team-workspace
+
+sudo chmod 775 /opt/dev-project
+sudo chmod 775 /opt/team-workspace
+
+# Testing
+sudo -u tokyo touch /opt/dev-project/tokyo.txt
+sudo -u berlin touch /opt/dev-project/berlin.txt
+sudo -u nairobi touch /opt/team-workspace/nairobi.txt
