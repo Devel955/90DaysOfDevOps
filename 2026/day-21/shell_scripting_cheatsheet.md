@@ -1,9 +1,9 @@
-ask 1: Basics
+Task 1: Basics
 Shebang
 #!/bin/bash
 Defines interpreter. Ensures script runs with Bash.
 Run Script
-chmod +x script.sh
+chmod +x script.sht
 ./script.sh
 bash script.sh
 
