@@ -1,13 +1,12 @@
-Task 1: Basics
+ask 1: Basics
 Shebang
 #!/bin/bash
-
 Defines interpreter. Ensures script runs with Bash.
-
 Run Script
 chmod +x script.sh
 ./script.sh
 bash script.sh
+
 Comments
 # Single line comment
 echo "Hello"  # Inline comment
@@ -16,7 +15,6 @@ NAME="Anand"
 echo $NAME
 echo "$NAME"
 echo '$NAME'
-
 Use quotes to prevent word splitting.
 
 Read Input
@@ -28,7 +26,7 @@ echo $1   # First argument
 echo $#   # Number of arguments
 echo $@   # All arguments
 echo $?   # Exit status
-🔹 Task 2: Operators & Conditionals
+Task 2: Operators & Conditionals
 String Comparisons
 [ "$a" = "$b" ]
 [ "$a" != "$b" ]
@@ -67,7 +65,7 @@ case $1 in
   stop) echo "Stopping";;
   *) echo "Invalid option";;
 esac
-🔹 Task 3: Loops
+Task 3: Loops
 For (List)
 for fruit in apple mango banana; do
   echo $fruit
@@ -120,7 +118,7 @@ Local Variable
 myfunc() {
   local var="Hello"
 }
-🔹 Task 5: Text Processing
+Task 5: Text Processing
 Grep
 grep -i "error" file.log
 grep -r "text" .
@@ -157,7 +155,7 @@ Head / Tail
 head -n 5 file
 tail -n 5 file
 tail -f file
-🔹 Task 6: Useful One-Liners
+Task 6: Useful One-Liners
 Delete files older than 7 days
 find . -type f -mtime +7 -delete
 Count lines in all logs
@@ -170,7 +168,7 @@ Disk usage alert
 df -h | awk '$5+0 > 80 {print $0}'
 Tail and filter errors
 tail -f app.log | grep --line-buffered "ERROR"
-🔹 Task 7: Error Handling & Debugging
+Task 7: Error Handling & Debugging
 Exit Codes
 echo $?
 exit 0
@@ -183,3 +181,6 @@ Debug Mode
 set -x
 Trap
 trap 'echo "Cleaning up..."; rm -f temp.txt' EXIT
+
+
+
