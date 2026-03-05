@@ -59,7 +59,7 @@ echo "Feature 1 work" >> feature1.txt
 git add feature1.txt
 git commit -m "Added feature1 work"
 
-Task 3: Push to GitHub
+# Task 3: Push to GitHub
  Create repo on GitHub
 GitHub → New repository
 Name: devops-git-practice
@@ -90,7 +90,7 @@ feature1.txt main branch me nahi hoga.
  Delete unused branch
 git branch -d feature-2
 
-Task 4: Pull from GitHub
+# Task 4: Pull from GitHub
 GitHub par change karo
 GitHub → edit file → commit
 Local me update lo
@@ -100,7 +100,7 @@ Command	Meaning
 git fetch	Sirf changes download karta hai
 git pull	Download + merge karta hai
 
-Task 5: Clone vs Fork
+# Task 5: Clone vs Fork
 Clone repo
 git clone https://github.com/user/repo.git
 Fork repo
