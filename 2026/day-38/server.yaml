@@ -1,0 +1,24 @@
+server:
+  name: prod-web-01
+  ip: 192.168.1.10
+  port: 8080
+
+database:
+  host: db.internal.local
+  name: app_production
+  credentials:
+    user: db_admin
+    password: s3cur3p@ss!
+
+startup_script: |
+  #!/bin/bash
+  echo "Starting server..."
+  systemctl start nginx
+  systemctl start app
+  echo "Server is up."
+
+server_description: >
+  This is the primary production web server.
+  It handles all incoming HTTP traffic
+  and forwards requests to the backend app.
+  
