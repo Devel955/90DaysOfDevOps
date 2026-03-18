@@ -1,0 +1,13 @@
+name: Anand sen
+role: DevOps Engineer (Learning)
+experience_years: 1
+learning: true
+
+tools:
+  - docker
+  - kubernetes
+  - terraform
+  - ansible
+  - jenkins
+
+hobbies: [reading, coding, hiking, gaming]
