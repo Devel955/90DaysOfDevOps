@@ -462,3 +462,6 @@ docker compose ps
    - **Metrics** tell you *something is wrong* (high latency, error rate spike)
    - **Logs** tell you *what happened* (error messages, stack traces)
    - **Traces** tell you *where* the problem is (which service, which call)
+#90DaysOfDevOps #DevOpsKaJosh #TrainWithShubham
+
+Happy Learning! TrainWithShubham
