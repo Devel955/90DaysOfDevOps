@@ -109,6 +109,7 @@ kubectl apply -f k8s/hpa.yml
 kubectl wait --for=condition=ready pod -l app=bankapp -n bankapp --timeout=300s
 ```
 
+
 ### Stack Verification
 
 ```bash
@@ -142,6 +143,9 @@ kubectl get pvc -n bankapp
 - Services: 3 ClusterIP services (bankapp:8080, mysql:3306, ollama:11434)
 
 ---
+### All Pods Running
+![kubectl get all](Screenshot%202026-05-01%20213439.png)
+
 
 ## Task 2: Gateway API and Application Access
 
@@ -153,6 +157,8 @@ helm install envoy-gateway oci://docker.io/envoyproxy/gateway-helm \
   -n envoy-gateway-system --create-namespace \
   --wait
 ```
+### BankApp Login
+![BankApp Login](Screenshot%202026-05-01%20221224.png)
 
 ### Gateway Configuration
 
