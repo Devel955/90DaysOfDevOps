@@ -157,8 +157,6 @@ helm install envoy-gateway oci://docker.io/envoyproxy/gateway-helm \
   -n envoy-gateway-system --create-namespace \
   --wait
 ```
-### BankApp Login
-![BankApp Login](Screenshot%202026-05-01%20221224.png)
 
 ### Gateway Configuration
 
