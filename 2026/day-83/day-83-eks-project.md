@@ -124,6 +124,62 @@ kubectl get pods -n monitoring
 ```
 ![Monitoring Pods](Screenshot%202026-05-01%20222514.png)
 
+### Access Grafana
+```bash
+kubectl port-forward svc/monitoring-grafana -n monitoring 3000:80
+```
+Open http://localhost:3000 — Login: admin / admin123
+
+### ServiceMonitor for BankApp
+```yaml
+# bankapp-servicemonitor.yaml
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: bankapp-monitor
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  namespaceSelector:
+    matchNames:
+      - bankapp
+  selector:
+    matchLabels:
+      app: bankapp
+  endpoints:
+    - port: "8080"
+      path: /actuator/prometheus
+      interval: 15s
+```
+
+```bash
+kubectl apply -f bankapp-servicemonitor.yaml
+```
+
+### Access Prometheus
+```bash
+kubectl port-forward svc/monitoring-kube-prometheus-prometheus -n monitoring 9090:9090
+```
+Open http://localhost:9090
+
+### PromQL Queries
+
+**JVM memory usage**
+```promql
+jvm_memory_used_bytes{namespace="bankapp"}
+```
+![Prometheus JVM](Screenshot%202026-05-01%20225449.png)
+
+**HTTP request rate**
+```promql
+rate(http_server_requests_seconds_count{namespace="bankapp"}[5m])
+```
+
+**HTTP p95 latency**
+```promql
+histogram_quantile(0.95, rate(http_server_requests_seconds_bucket{namespace="bankapp"}[5m]))
+```
 ### PromQL Queries
 
 **JVM memory usage**
