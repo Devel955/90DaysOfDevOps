@@ -296,6 +296,8 @@ Internet → NLB → Envoy Gateway → EKS Cluster
 ├── Prometheus
 └── Grafana
 VPC (us-west-2) → 3 AZs → m7i-flex.large nodes (8GB RAM, Free Tier eligible)
+<img width="1380" height="752" alt="image" src="https://github.com/user-attachments/assets/b1a54c52-12d4-4348-9e9d-333ef810822c" />
+
 
 ## Key Takeaways
 
