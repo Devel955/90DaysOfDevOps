@@ -275,12 +275,4 @@ Revision: a6f4c45
 
 GitOps makes Kubernetes deployments more reliable because the desired state is always in Git. ArgoCD gives visibility into what is deployed, which commit was synced, and whether the cluster still matches the repository. Manual cluster edits do not survive when self-healing is enabled, so real changes must go through Git.
 
-## LinkedIn Post
-
-Started the GitOps block today -- deployed the AI-BankApp through ArgoCD on EKS instead of `kubectl apply`.
-
-ArgoCD watches the Git repo and syncs changes automatically. Tested self-healing by manually scaling pods and deleting ConfigMaps -- ArgoCD reverted every change within minutes.
-
-The cluster now always matches Git. No more "who ran kubectl on Friday night?"
-
 `#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
